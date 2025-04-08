@@ -1,4 +1,4 @@
-"use client"
+
 import CreatePost from "@/components/CreatePost";
 import { db } from "@/firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -11,6 +11,9 @@ import React from "react";
      <div>
       <CreatePost />
      </div>
+     <ul>
+      {posts.docs.map(p => <li>{p.data().post}</li>)}
+     </ul>
      </>
     );
   }
